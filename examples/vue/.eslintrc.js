@@ -2,7 +2,7 @@
  * @type {import('eslint').ESLint.ConfigData}
  */
 module.exports = {
-  extends: ['dylan/vue'],
+  extends: ['dylanjs/vue'],
   rules: {
     'vue/multi-word-component-names': [
       'error',
@@ -11,4 +11,4 @@ module.exports = {
       }
     ]
   }
-};
+}

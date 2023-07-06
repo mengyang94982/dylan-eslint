@@ -1,8 +1,20 @@
 {
-  "name": "@dylan/eslint",
-  "version": "0.0.1",
+  "name": "eslint-config-dylanjs",
+  "version": "0.0.2",
   "description": "eslint config resets",
-  "author": "",
+  "author": {
+    "name": "Dylan",
+    "email": "my466879168@gmail.com",
+    "url": "https://github.com/mengyang94982"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/soybeanjs/dylan-eslint",
+  "repository": {
+    "url": "https://github.com/soybeanjs/dylan-eslint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/soybeanjs/dylan-eslint/issues"
+  },
   "files": [
     "lib"
   ],
@@ -11,42 +23,52 @@
     "./vue": "./lib/configs/vue.js",
     "./react": "./lib/configs/react.js"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "scripts": {
     "lint": "eslint . --fix",
-    "format": "soy prettier-write",
-    "commit": "soy git-commit",
-    "cleanup": "soy cleanup",
-    "ncu": "soy ncu",
+    "format": "dy prettier-write",
+    "commit": "dy git-commit",
+    "cleanup": "dy cleanup",
+    "ncu": "dy ncu",
     "publish-pkg": "pnpm -r publish --access public",
-    "release": "soy release && pnpm publish-pkg"
+    "release": "dy release && pnpm publish-pkg"
   },
-  "keywords": [],
-  "license": "ISC",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.15.1",
-    "prettier": "^2.8.8"
+    "@typescript-eslint/eslint-plugin": "5.60.1",
+    "@typescript-eslint/parser": "5.60.1",
+    "eslint-config-prettier": "8.8.0",
+    "eslint-import-resolver-alias": "1.1.2",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsonc": "2.9.0",
+    "eslint-plugin-n": "16.0.1",
+    "eslint-plugin-prettier": "4.2.1",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-vue": "9.15.1",
+    "prettier": "2.8.8"
   },
   "devDependencies": {
-    "@types/eslint": "^8.40.2",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "eslint": "^8.44.0",
-    "simple-git-hooks": "^2.8.1",
-    "typescript": "^5.1.6",
-    "vue": "^3.3.4"
+    "@dylanjs/cli": "^0.0.1",
+    "@types/eslint": "8.40.2",
+    "@types/react": "18.2.14",
+    "@types/react-dom": "18.2.6",
+    "eslint": "8.44.0",
+    "eslint-plugin-dylanjs": "link:",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "simple-git-hooks": "2.8.1",
+    "typescript": "5.0.4",
+    "vue": "3.3.4"
   },
   "peerDependencies": {
     "eslint": ">=7.4.0",
     "typescript": ">=4.8.0"
   },
   "simple-git-hooks": {
-    "commit-msg": "pnpm soy git-commit-verify",
-    "pre-commit": "pnpm soy lint-staged"
+    "commit-msg": "pnpm dy git-commit-verify",
+    "pre-commit": "pnpm dy lint-staged"
   }
 }
